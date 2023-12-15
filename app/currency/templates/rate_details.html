@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Rate Details
+{% endblock title %}
+
+{% block content %}
+    <h1>Rate Details</h1>
+    <ul>
+        <li><strong>ID:</strong> {{ rate.id }}</li>
+        <li><strong>Buy:</strong> {{ rate.buy }}</li>
+        <li><strong>Sell:</strong> {{ rate.sell }}</li>
+        <li><strong>Currency:</strong> {{ rate.currency }}</li>
+        <li><strong>Source:</strong> {{ rate.source }}</li>
+    </ul>
+    <a href="{% url 'rate_list' %}">Back to Rate List</a>
+{% endblock content %}
+

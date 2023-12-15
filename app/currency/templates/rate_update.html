@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Update Rate
+{% endblock title %}
+
+{% block content %}
+    <h1>Update Rate</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'rate_list' %}">Back to Rate List</a>
+{% endblock content %}
+

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Edit Source
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2>Edit Source</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        <br>
+        <a href="{% url 'source_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+{% endblock content %}

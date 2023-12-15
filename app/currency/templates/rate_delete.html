@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Rate
+{% endblock title %}
+
+{% block content %}
+    <h1>Delete Rate</h1>
+    <p>Are you sure you want to delete this rate?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'rate_list' %}">Back to Rate List</a>
+{% endblock content %}

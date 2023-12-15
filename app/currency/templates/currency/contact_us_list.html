@@ -1,0 +1,33 @@
+<!-- currency/templates/currency/contact_us_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us List</title>
+</head>
+<body>
+    <h1>Contact Us List</h1>
+
+    <ul>
+        <li><a href="{% url 'contact_us_list' %}?sort_by=id">Sort by ID</a></li>
+        <li><a href="{% url 'contact_us_list' %}?sort_by=email_from">Sort by Email From</a></li>
+        <li><a href="{% url 'contact_us_list' %}?sort_by=subject">Sort by Subject</a></li>
+        <li><a href="{% url 'contact_us_list' %}?sort_by=message">Sort by Message</a></li>
+    </ul>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Email From</th>
+            <th>Subject</th>
+            <th>Message</th>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.email_from }}</td>
+            <td>{{ contact.subject }}</td>
+            <td>{{ contact.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

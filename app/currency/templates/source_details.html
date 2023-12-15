@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Source Details - {{ source.name }}
+{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Source Details - {{ source.name }}</h1>
+        <p>URL: {{ source.source_url }}</p>
+        <p>Name: {{ source.name }}</p>
+        <p>Phone Number: {{ source.phone_number }}</p>
+        <p>Exchange Address: {{ source.exchange_address }}</p>
+        <a href="{% url 'source_update' source.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'source_delete' source.pk %}" class="btn btn-danger">Delete</a>
+    </div>
+{% endblock content %}

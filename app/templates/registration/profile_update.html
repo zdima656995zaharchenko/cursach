@@ -1,0 +1,14 @@
+{% block content %}
+    Update Profile Form
+    <br>
+
+
+    <img src="{{ user.avatar_url }}" alt="avatar" height="200px" width="200px">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'rate_list' %}">Back to Rate List</a>
+{% endblock content %}
